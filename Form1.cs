@@ -1,6 +1,8 @@
 using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MovieDB
@@ -9,59 +11,74 @@ namespace MovieDB
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); // Initializes the components defined in the designer
         }
 
+        // Event handler for when Form1 loads
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            LoadMovies(); // Load movies into the FlowLayoutPanel on form load
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // Method to load movies from the database and display them in the FlowLayoutPanel
+        private void LoadMovies()
         {
-            // Update the connection string with the absolute path to your database
+            // Connection string to connect to the database
             string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\Database.accdb;Persist Security Info=False;";
+            // SQL query to select movie details
+            string sql = "SELECT MovieId, Title, Artwork FROM MovieTable";
 
-            // SQL query to retrieve data
-            string sql = "SELECT * FROM MovieTable";
-
+            // Using statement to ensure the connection is properly disposed
             using (OleDbConnection conn = new OleDbConnection(connString))
             {
-                OleDbCommand cmd = new OleDbCommand(sql, conn);
-
+                OleDbCommand cmd = new OleDbCommand(sql, conn); // Create a command to execute the SQL query
                 try
                 {
-                    conn.Open();
+                    conn.Open(); // Open the database connection
+                    using (OleDbDataReader reader = cmd.ExecuteReader()) // Execute the query and get the result set
+                    {
+                        flowLayoutPanelMovies.Controls.Clear(); // Clear the FlowLayoutPanel before adding new items
 
-                    OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+                        // Iterate through each row in the result set
+                        while (reader.Read())
+                        {
+                            MovieItemControl movieItem = new MovieItemControl(); // Create a new MovieItemControl for each movie
+                            movieItem.MovieTitle = reader["Title"].ToString(); // Set the movie title
 
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
+                            // Check if the 'Artwork' field is not DBNull and then set the movie image
+                            if (!(reader["Artwork"] is DBNull))
+                            {
+                                byte[] imageBytes = (byte[])reader["Artwork"]; // Get the image bytes from the database
+                                using (var ms = new MemoryStream(imageBytes)) // Create a memory stream from the image bytes
+                                {
+                                    movieItem.MovieImage = Image.FromStream(ms); // Create an image from the memory stream and set it to the MovieItemControl
+                                }
+                            }
 
-                    // Clear existing data source.
-                    dataGridView1.DataSource = null;
-                    dataGridView1.Rows.Clear();
-
-                    // Set the new data source
-                    dataGridView1.DataSource = dataTable;
-
+                            flowLayoutPanelMovies.Controls.Add(movieItem); // Add the MovieItemControl to the FlowLayoutPanel
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Database error: " + ex.Message);
+                    MessageBox.Show("Database error: " + ex.Message); // Show a message box if an error occurs
                 }
                 finally
                 {
-                    // Ensure the connection is closed properly
-                    conn.Close();
+                    conn.Close(); // Ensure the connection is closed
                 }
             }
         }
 
+        // Event handler for when the 'Add Movie' button is clicked
         private void buttonAddMovie_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+            Form2 form2 = new Form2(); // Create a new instance of Form2
+            var result = form2.ShowDialog(); // Show Form2 as a dialog and store the result
+            if (result == DialogResult.OK) // Check if the dialog result is OK
+            {
+                LoadMovies(); // Reload the movies to include any new additions
+            }
         }
     }
 }

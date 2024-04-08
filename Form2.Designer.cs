@@ -55,7 +55,7 @@
             // 
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI", 9F);
-            labelTitle.Location = new Point(99, 34);
+            labelTitle.Location = new Point(87, 26);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(29, 15);
             labelTitle.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             labelDir.AutoSize = true;
             labelDir.Font = new Font("Segoe UI", 9F);
-            labelDir.Location = new Point(79, 67);
+            labelDir.Location = new Point(69, 50);
             labelDir.Name = "labelDir";
             labelDir.Size = new Size(49, 15);
             labelDir.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             labelGen.AutoSize = true;
             labelGen.Font = new Font("Segoe UI", 9F);
-            labelGen.Location = new Point(90, 100);
+            labelGen.Location = new Point(79, 75);
             labelGen.Name = "labelGen";
             labelGen.Size = new Size(38, 15);
             labelGen.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             labelYear.AutoSize = true;
             labelYear.Font = new Font("Segoe UI", 9F);
-            labelYear.Location = new Point(99, 133);
+            labelYear.Location = new Point(87, 100);
             labelYear.Name = "labelYear";
             labelYear.Size = new Size(29, 15);
             labelYear.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             labelRate.AutoSize = true;
             labelRate.Font = new Font("Segoe UI", 9F);
-            labelRate.Location = new Point(63, 166);
+            labelRate.Location = new Point(55, 124);
             labelRate.Name = "labelRate";
             labelRate.Size = new Size(65, 15);
             labelRate.TabIndex = 6;
@@ -105,7 +105,7 @@
             // 
             labelDur.AutoSize = true;
             labelDur.Font = new Font("Segoe UI", 9F);
-            labelDur.Location = new Point(75, 199);
+            labelDur.Location = new Point(66, 149);
             labelDur.Name = "labelDur";
             labelDur.Size = new Size(53, 15);
             labelDur.TabIndex = 7;
@@ -115,7 +115,7 @@
             // 
             labelUserRate.AutoSize = true;
             labelUserRate.Font = new Font("Segoe UI", 9F);
-            labelUserRate.Location = new Point(87, 232);
+            labelUserRate.Location = new Point(76, 174);
             labelUserRate.Name = "labelUserRate";
             labelUserRate.Size = new Size(41, 15);
             labelUserRate.TabIndex = 8;
@@ -125,7 +125,7 @@
             // 
             labelSum.AutoSize = true;
             labelSum.Font = new Font("Segoe UI", 9F);
-            labelSum.Location = new Point(70, 265);
+            labelSum.Location = new Point(61, 199);
             labelSum.Name = "labelSum";
             labelSum.Size = new Size(58, 15);
             labelSum.TabIndex = 9;
@@ -133,67 +133,76 @@
             // 
             // textBoxTitle
             // 
-            textBoxTitle.Location = new Point(134, 27);
+            textBoxTitle.Location = new Point(117, 20);
+            textBoxTitle.Margin = new Padding(3, 2, 3, 2);
             textBoxTitle.Name = "textBoxTitle";
-            textBoxTitle.Size = new Size(100, 27);
+            textBoxTitle.Size = new Size(88, 23);
             textBoxTitle.TabIndex = 10;
             // 
             // textBoxDir
             // 
-            textBoxDir.Location = new Point(134, 60);
+            textBoxDir.Location = new Point(117, 45);
+            textBoxDir.Margin = new Padding(3, 2, 3, 2);
             textBoxDir.Name = "textBoxDir";
-            textBoxDir.Size = new Size(100, 27);
+            textBoxDir.Size = new Size(88, 23);
             textBoxDir.TabIndex = 11;
             // 
             // textBoxGen
             // 
-            textBoxGen.Location = new Point(134, 93);
+            textBoxGen.Location = new Point(117, 70);
+            textBoxGen.Margin = new Padding(3, 2, 3, 2);
             textBoxGen.Name = "textBoxGen";
-            textBoxGen.Size = new Size(100, 27);
+            textBoxGen.Size = new Size(88, 23);
             textBoxGen.TabIndex = 12;
             // 
             // textBoxYear
             // 
-            textBoxYear.Location = new Point(134, 126);
+            textBoxYear.Location = new Point(117, 94);
+            textBoxYear.Margin = new Padding(3, 2, 3, 2);
             textBoxYear.Name = "textBoxYear";
-            textBoxYear.Size = new Size(100, 27);
+            textBoxYear.Size = new Size(88, 23);
             textBoxYear.TabIndex = 13;
             // 
             // textBoxRate
             // 
-            textBoxRate.Location = new Point(134, 159);
+            textBoxRate.Location = new Point(117, 119);
+            textBoxRate.Margin = new Padding(3, 2, 3, 2);
             textBoxRate.Name = "textBoxRate";
-            textBoxRate.Size = new Size(100, 27);
+            textBoxRate.Size = new Size(88, 23);
             textBoxRate.TabIndex = 14;
             // 
             // textBoxDur
             // 
-            textBoxDur.Location = new Point(134, 192);
+            textBoxDur.Location = new Point(117, 144);
+            textBoxDur.Margin = new Padding(3, 2, 3, 2);
             textBoxDur.Name = "textBoxDur";
-            textBoxDur.Size = new Size(100, 27);
+            textBoxDur.Size = new Size(88, 23);
             textBoxDur.TabIndex = 15;
             // 
             // textBoxUserRate
             // 
-            textBoxUserRate.Location = new Point(134, 225);
+            textBoxUserRate.Location = new Point(117, 169);
+            textBoxUserRate.Margin = new Padding(3, 2, 3, 2);
             textBoxUserRate.Name = "textBoxUserRate";
-            textBoxUserRate.Size = new Size(100, 27);
+            textBoxUserRate.Size = new Size(88, 23);
             textBoxUserRate.TabIndex = 16;
             // 
             // textBoxSum
             // 
-            textBoxSum.Location = new Point(134, 258);
+            textBoxSum.Location = new Point(117, 194);
+            textBoxSum.Margin = new Padding(3, 2, 3, 2);
             textBoxSum.Multiline = true;
             textBoxSum.Name = "textBoxSum";
             textBoxSum.ScrollBars = ScrollBars.Vertical;
-            textBoxSum.Size = new Size(377, 129);
+            textBoxSum.Size = new Size(330, 98);
             textBoxSum.TabIndex = 17;
             // 
             // buttonNewEntry
             // 
-            buttonNewEntry.Location = new Point(623, 443);
+            buttonNewEntry.Location = new Point(545, 332);
+            buttonNewEntry.Margin = new Padding(3, 2, 3, 2);
             buttonNewEntry.Name = "buttonNewEntry";
-            buttonNewEntry.Size = new Size(140, 59);
+            buttonNewEntry.Size = new Size(122, 44);
             buttonNewEntry.TabIndex = 18;
             buttonNewEntry.Text = "Add Movie";
             buttonNewEntry.UseVisualStyleBackColor = true;
@@ -203,7 +212,7 @@
             // 
             labelArt.AutoSize = true;
             labelArt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelArt.Location = new Point(54, 403);
+            labelArt.Location = new Point(47, 302);
             labelArt.Name = "labelArt";
             labelArt.Size = new Size(74, 15);
             labelArt.TabIndex = 19;
@@ -216,9 +225,10 @@
             // buttonSelectImage
             // 
             buttonSelectImage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonSelectImage.Location = new Point(134, 397);
+            buttonSelectImage.Location = new Point(117, 298);
+            buttonSelectImage.Margin = new Padding(3, 2, 3, 2);
             buttonSelectImage.Name = "buttonSelectImage";
-            buttonSelectImage.Size = new Size(63, 27);
+            buttonSelectImage.Size = new Size(55, 20);
             buttonSelectImage.TabIndex = 20;
             buttonSelectImage.Text = "Browse...";
             buttonSelectImage.UseVisualStyleBackColor = true;
@@ -230,9 +240,9 @@
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(775, 514);
+            ClientSize = new Size(678, 386);
             Controls.Add(buttonSelectImage);
             Controls.Add(labelArt);
             Controls.Add(buttonNewEntry);
@@ -252,6 +262,7 @@
             Controls.Add(labelGen);
             Controls.Add(labelDir);
             Controls.Add(labelTitle);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             Text = "Form2";
             Load += Form2_Load;
