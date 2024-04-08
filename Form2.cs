@@ -21,6 +21,8 @@ namespace MovieDB
             InitializeComponent();
         }
 
+        
+        
         private void Form2_Load(object sender, EventArgs e)
         {
             // This method is intentionally left empty
@@ -44,7 +46,7 @@ namespace MovieDB
             }
 
             // Connection string
-            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\Database.accdb;Persist Security Info=False;";
+            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\willi\source\repos\flyteongithub\MovieDB\Database.accdb;Persist Security Info=False;";
 
             // SQL command with parameters
             string sql = "INSERT INTO MovieTable ([Title], [Director], [Genre], [Year], [AgeRating], [Duration], [UserRating], [Summary], [Artwork]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
