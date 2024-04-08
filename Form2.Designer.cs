@@ -55,9 +55,9 @@
             // 
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI", 9F);
-            labelTitle.Location = new Point(99, 34);
+            labelTitle.Location = new Point(90, 34);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(29, 15);
+            labelTitle.Size = new Size(38, 20);
             labelTitle.TabIndex = 2;
             labelTitle.Text = "Title";
             // 
@@ -65,19 +65,20 @@
             // 
             labelDir.AutoSize = true;
             labelDir.Font = new Font("Segoe UI", 9F);
-            labelDir.Location = new Point(79, 67);
+            labelDir.Location = new Point(65, 67);
             labelDir.Name = "labelDir";
-            labelDir.Size = new Size(49, 15);
+            labelDir.Size = new Size(63, 20);
             labelDir.TabIndex = 3;
             labelDir.Text = "Director";
+            
             // 
             // labelGen
             // 
             labelGen.AutoSize = true;
             labelGen.Font = new Font("Segoe UI", 9F);
-            labelGen.Location = new Point(90, 100);
+            labelGen.Location = new Point(80, 100);
             labelGen.Name = "labelGen";
-            labelGen.Size = new Size(38, 15);
+            labelGen.Size = new Size(48, 20);
             labelGen.TabIndex = 4;
             labelGen.Text = "Genre";
             // 
@@ -85,9 +86,9 @@
             // 
             labelYear.AutoSize = true;
             labelYear.Font = new Font("Segoe UI", 9F);
-            labelYear.Location = new Point(99, 133);
+            labelYear.Location = new Point(91, 133);
             labelYear.Name = "labelYear";
-            labelYear.Size = new Size(29, 15);
+            labelYear.Size = new Size(37, 20);
             labelYear.TabIndex = 5;
             labelYear.Text = "Year";
             // 
@@ -95,9 +96,9 @@
             // 
             labelRate.AutoSize = true;
             labelRate.Font = new Font("Segoe UI", 9F);
-            labelRate.Location = new Point(63, 166);
+            labelRate.Location = new Point(45, 162);
             labelRate.Name = "labelRate";
-            labelRate.Size = new Size(65, 15);
+            labelRate.Size = new Size(83, 20);
             labelRate.TabIndex = 6;
             labelRate.Text = "Age Rating";
             // 
@@ -105,9 +106,9 @@
             // 
             labelDur.AutoSize = true;
             labelDur.Font = new Font("Segoe UI", 9F);
-            labelDur.Location = new Point(75, 199);
+            labelDur.Location = new Point(61, 199);
             labelDur.Name = "labelDur";
-            labelDur.Size = new Size(53, 15);
+            labelDur.Size = new Size(67, 20);
             labelDur.TabIndex = 7;
             labelDur.Text = "Duration";
             // 
@@ -115,9 +116,9 @@
             // 
             labelUserRate.AutoSize = true;
             labelUserRate.Font = new Font("Segoe UI", 9F);
-            labelUserRate.Location = new Point(87, 232);
+            labelUserRate.Location = new Point(76, 232);
             labelUserRate.Name = "labelUserRate";
-            labelUserRate.Size = new Size(41, 15);
+            labelUserRate.Size = new Size(52, 20);
             labelUserRate.TabIndex = 8;
             labelUserRate.Text = "Rating";
             // 
@@ -125,9 +126,9 @@
             // 
             labelSum.AutoSize = true;
             labelSum.Font = new Font("Segoe UI", 9F);
-            labelSum.Location = new Point(70, 265);
+            labelSum.Location = new Point(57, 261);
             labelSum.Name = "labelSum";
-            labelSum.Size = new Size(58, 15);
+            labelSum.Size = new Size(71, 20);
             labelSum.TabIndex = 9;
             labelSum.Text = "Summary";
             // 
@@ -203,9 +204,9 @@
             // 
             labelArt.AutoSize = true;
             labelArt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelArt.Location = new Point(54, 403);
+            labelArt.Location = new Point(35, 400);
             labelArt.Name = "labelArt";
-            labelArt.Size = new Size(74, 15);
+            labelArt.Size = new Size(93, 20);
             labelArt.TabIndex = 19;
             labelArt.Text = "Add Artwork";
             // 
@@ -218,7 +219,7 @@
             buttonSelectImage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonSelectImage.Location = new Point(134, 397);
             buttonSelectImage.Name = "buttonSelectImage";
-            buttonSelectImage.Size = new Size(63, 27);
+            buttonSelectImage.Size = new Size(100, 27);
             buttonSelectImage.TabIndex = 20;
             buttonSelectImage.Text = "Browse...";
             buttonSelectImage.UseVisualStyleBackColor = true;

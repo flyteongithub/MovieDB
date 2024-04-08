@@ -21,8 +21,8 @@ namespace MovieDB
             InitializeComponent();
         }
 
-        
-        
+
+
         private void Form2_Load(object sender, EventArgs e)
         {
             // This method is intentionally left empty
@@ -33,10 +33,10 @@ namespace MovieDB
             string title = textBoxTitle.Text;
             string director = textBoxDir.Text;
             string genre = textBoxGen.Text;
-            int year = int.Parse(textBoxYear.Text); 
+            int year = int.Parse(textBoxYear.Text);
             string ageRating = textBoxRate.Text;
-            int duration = int.Parse(textBoxDur.Text); 
-            int userRating = int.Parse(textBoxUserRate.Text); 
+            int duration = int.Parse(textBoxDur.Text);
+            int userRating = int.Parse(textBoxUserRate.Text);
             string summary = textBoxSum.Text;
 
             byte[] imageBytes = null;
@@ -94,5 +94,7 @@ namespace MovieDB
                 }
             }
         }
+
+        
     }
 }

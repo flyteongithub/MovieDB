@@ -31,6 +31,8 @@
             button1 = new Button();
             dataGridView1 = new DataGridView();
             buttonAddMovie = new Button();
+            buttonSearch = new Button();
+            textBoxSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -49,6 +51,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(154, 87);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1051, 549);
             dataGridView1.TabIndex = 1;
             // 
@@ -62,11 +65,29 @@
             buttonAddMovie.UseVisualStyleBackColor = true;
             buttonAddMovie.Click += buttonAddMovie_Click;
             // 
+            // buttonSearch
+            // 
+            buttonSearch.Location = new Point(213, 18);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(106, 35);
+            buttonSearch.TabIndex = 3;
+            buttonSearch.Text = "Search";
+            buttonSearch.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.Location = new Point(325, 22);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(473, 27);
+            textBoxSearch.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(textBoxSearch);
+            Controls.Add(buttonSearch);
             Controls.Add(buttonAddMovie);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
@@ -75,6 +96,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -82,5 +104,7 @@
         private Button button1;
         private DataGridView dataGridView1;
         private Button buttonAddMovie;
+        private Button buttonSearch;
+        private TextBox textBoxSearch;
     }
 }
