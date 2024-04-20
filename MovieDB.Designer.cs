@@ -90,7 +90,8 @@
             Controls.Add(buttonAddMovie);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
-            FormBorderStyle = FormBorderStyle.None;
+            Cursor = Cursors.Default;
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Margin = new Padding(3, 2, 3, 2);
             Name = "MovieDB";
             Text = "MovieDB";
