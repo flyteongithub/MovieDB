@@ -1,6 +1,6 @@
 ﻿namespace MovieDB
 {
-    partial class Form1
+    partial class MovieDB
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MovieDB));
             button1 = new Button();
             dataGridView1 = new DataGridView();
             buttonAddMovie = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(47, 117);
+            button1.Location = new Point(58, 116);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(75, 50);
+            button1.Size = new Size(66, 38);
             button1.TabIndex = 0;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
@@ -47,33 +51,52 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(154, 87);
+            dataGridView1.Location = new Point(139, 88);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1051, 549);
+            dataGridView1.Size = new Size(920, 412);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // buttonAddMovie
             // 
-            buttonAddMovie.Location = new Point(12, 12);
+            buttonAddMovie.Location = new Point(12, 66);
+            buttonAddMovie.Margin = new Padding(3, 2, 3, 2);
             buttonAddMovie.Name = "buttonAddMovie";
-            buttonAddMovie.Size = new Size(117, 41);
+            buttonAddMovie.Size = new Size(102, 31);
             buttonAddMovie.TabIndex = 2;
             buttonAddMovie.Text = "Add Movie";
             buttonAddMovie.UseVisualStyleBackColor = true;
             buttonAddMovie.Click += buttonAddMovie_Click;
             // 
-            // Form1
+            // pictureBox1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(475, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(235, 71);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // MovieDB
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 681);
+            ClientSize = new Size(1106, 511);
+            Controls.Add(pictureBox1);
             Controls.Add(buttonAddMovie);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
-            Name = "Form1";
-            Text = "Form1";
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "MovieDB";
+            Text = "MovieDB";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -82,5 +105,6 @@
         private Button button1;
         private DataGridView dataGridView1;
         private Button buttonAddMovie;
+        private PictureBox pictureBox1;
     }
 }

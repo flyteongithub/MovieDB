@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace MovieDB
 {
-    public partial class Form1 : Form
+    public partial class MovieDB : Form
     {
-        public Form1()
+        public MovieDB()
         {
             InitializeComponent();
         }
@@ -62,6 +62,18 @@ namespace MovieDB
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
