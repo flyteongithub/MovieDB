@@ -59,5 +59,15 @@ namespace MovieDB.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap adrien_olichon_ilVYjf0J378_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("adrien-olichon-ilVYjf0J378-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

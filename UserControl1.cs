@@ -4,26 +4,54 @@ using System.Windows.Forms;
 
 namespace MovieDB
 {
-    // Custom UserControl to represent a movie item visually in the UI
-    public partial class MovieItemControl : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public MovieItemControl()
+        public int MovieId { get; set; }
+        private bool isSelected = false;
+
+        public UserControl1()
         {
-            InitializeComponent(); // Initialize the component's UI elements
+            InitializeComponent();
+            this.BorderStyle = BorderStyle.None; // No border initially
         }
 
-        // Public property for getting/setting the movie title
         public string MovieTitle
         {
-            get { return labelMovieTitle.Text; } // Get the text from the label
-            set { labelMovieTitle.Text = value; } // Set the text of the label
+            get { return labelMovieTitle.Text; }
+            set { labelMovieTitle.Text = value; }
         }
 
-        // Public property for getting/setting the movie image
-        public Image MovieImage
+        public PictureBox MoviePictureBox
         {
-            get { return pictureBoxMovie.Image; } // Get the image from the PictureBox
-            set { pictureBoxMovie.Image = value; } // Set the image of the PictureBox
+            get { return pictureBoxMovie; }
+        }
+
+        public void SetArtwork(Image artwork)
+        {
+            pictureBoxMovie.Image = artwork;
+        }
+
+        // Method to toggle border
+        public void ToggleBorder(bool active)
+        {
+            isSelected = active;
+            this.BorderStyle = active ? BorderStyle.FixedSingle : BorderStyle.None;
+        }
+
+        protected override void OnClick(EventArgs e)
+        {
+            base.OnClick(e);
+            ToggleBorder(true);
+        }
+
+        // Optional: To visually reset when another movie is selected
+        protected override void OnLostFocus(EventArgs e)
+        {
+            base.OnLostFocus(e);
+            if (isSelected)
+            {
+                ToggleBorder(false);
+            }
         }
     }
 }

@@ -9,76 +9,120 @@ namespace MovieDB
 {
     public partial class Form1 : Form
     {
+        private readonly string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\Database.accdb;Persist Security Info=False;";
+        private UserControl1 _selectedMovieItem;
+
         public Form1()
         {
-            InitializeComponent(); // Initializes the components defined in the designer
+            InitializeComponent();
         }
 
-        // Event handler for when Form1 loads
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadMovies(); // Load movies into the FlowLayoutPanel on form load
+            LoadMovies();
         }
 
-        // Method to load movies from the database and display them in the FlowLayoutPanel
         private void LoadMovies()
         {
-            // Connection string to connect to the database
-            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\Database.accdb;Persist Security Info=False;";
-            // SQL query to select movie details
-            string sql = "SELECT MovieId, Title, Artwork FROM MovieTable";
+            const string sql = "SELECT MovieId, Title, Director, Genre, Year, AgeRating, Duration, UserRating, Summary, Artwork FROM MovieTable";
 
-            // Using statement to ensure the connection is properly disposed
-            using (OleDbConnection conn = new OleDbConnection(connString))
+            using (var conn = new OleDbConnection(connString))
+            using (var cmd = new OleDbCommand(sql, conn))
             {
-                OleDbCommand cmd = new OleDbCommand(sql, conn); // Create a command to execute the SQL query
                 try
                 {
-                    conn.Open(); // Open the database connection
-                    using (OleDbDataReader reader = cmd.ExecuteReader()) // Execute the query and get the result set
+                    conn.Open();
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        flowLayoutPanelMovies.Controls.Clear(); // Clear the FlowLayoutPanel before adding new items
-
-                        // Iterate through each row in the result set
+                        flowLayoutPanelMovies.Controls.Clear();
                         while (reader.Read())
                         {
-                            MovieItemControl movieItem = new MovieItemControl(); // Create a new MovieItemControl for each movie
-                            movieItem.MovieTitle = reader["Title"].ToString(); // Set the movie title
-
-                            // Check if the 'Artwork' field is not DBNull and then set the movie image
-                            if (!(reader["Artwork"] is DBNull))
+                            var movieItem = new UserControl1
                             {
-                                byte[] imageBytes = (byte[])reader["Artwork"]; // Get the image bytes from the database
-                                using (var ms = new MemoryStream(imageBytes)) // Create a memory stream from the image bytes
+                                MovieTitle = reader["Title"].ToString(),
+                                MovieId = Convert.ToInt32(reader["MovieId"])
+                            };
+
+                            movieItem.MoviePictureBox.Click += MoviePictureBox_Click;
+                            movieItem.MoviePictureBox.Tag = movieItem.MovieId;
+                            movieItem.Cursor = Cursors.Hand;
+
+                            if (reader["Artwork"] != DBNull.Value)
+                            {
+                                byte[] imageBytes = (byte[])reader["Artwork"];
+                                using (var ms = new MemoryStream(imageBytes))
                                 {
-                                    movieItem.MovieImage = Image.FromStream(ms); // Create an image from the memory stream and set it to the MovieItemControl
+                                    movieItem.SetArtwork(Image.FromStream(ms));
                                 }
                             }
 
-                            flowLayoutPanelMovies.Controls.Add(movieItem); // Add the MovieItemControl to the FlowLayoutPanel
+                            flowLayoutPanelMovies.Controls.Add(movieItem);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Database error: " + ex.Message); // Show a message box if an error occurs
-                }
-                finally
-                {
-                    conn.Close(); // Ensure the connection is closed
+                    MessageBox.Show("Database error: " + ex.Message);
                 }
             }
         }
 
-        // Event handler for when the 'Add Movie' button is clicked
+        private void MoviePictureBox_Click(object sender, EventArgs e)
+        {
+            if (sender is PictureBox pictureBox && pictureBox.Tag is int movieId)
+            {
+                if (_selectedMovieItem != null)
+                {
+                    _selectedMovieItem.ToggleBorder(false);
+                }
+
+                var parentUserControl = (UserControl1)pictureBox.Parent;
+                parentUserControl.ToggleBorder(true);
+                _selectedMovieItem = parentUserControl;
+
+                DisplayMovieDetails(movieId);
+            }
+        }
+
+
+        private void DisplayMovieDetails(int movieId)
+        {
+            const string sql = "SELECT Title, Director, Genre, Year, AgeRating, Duration, UserRating, Summary FROM MovieTable WHERE MovieId = ?";
+
+            using (var conn = new OleDbConnection(connString))
+            using (var cmd = new OleDbCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("?", movieId);
+
+                try
+                {
+                    conn.Open();
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            labelTitleValue.Text = reader["Title"].ToString();
+                            labelDirValue.Text = reader["Director"].ToString();
+                            labelGenValue.Text = reader["Genre"].ToString();
+                            labelYearValue.Text = reader["Year"].ToString();
+                            labelRateValue.Text = reader["AgeRating"].ToString();
+                            labelDurValue.Text = reader["Duration"].ToString();
+                            labelUserRateValue.Text = reader["UserRating"].ToString();
+                            labelSumValue.Text = reader["Summary"].ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database error: " + ex.Message);
+                }
+            }
+        }
+
         private void buttonAddMovie_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(); // Create a new instance of Form2
-            var result = form2.ShowDialog(); // Show Form2 as a dialog and store the result
-            if (result == DialogResult.OK) // Check if the dialog result is OK
-            {
-                LoadMovies(); // Reload the movies to include any new additions
-            }
+            var form2 = new Form2();
+            form2.ShowDialog(); // Open the Form2 as a dialog
         }
     }
 }

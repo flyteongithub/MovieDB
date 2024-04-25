@@ -1,6 +1,6 @@
 ﻿namespace MovieDB
 {
-    partial class MovieItemControl
+    partial class UserControl1
     {
         /// <summary> 
         /// Required designer variable.
@@ -55,13 +55,13 @@
             labelMovieTitle.Text = "label1";
             labelMovieTitle.TextAlign = ContentAlignment.TopCenter;
             // 
-            // MovieItemControl
+            // UserControl1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(labelMovieTitle);
             Controls.Add(pictureBoxMovie);
-            Name = "MovieItemControl";
+            Name = "UserControl1";
             Size = new Size(157, 264);
             ((System.ComponentModel.ISupportInitialize)pictureBoxMovie).EndInit();
             ResumeLayout(false);
