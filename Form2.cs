@@ -38,7 +38,7 @@ namespace MovieDB
 
             // SQL statement for inserting new movie
             string sql = "INSERT INTO MovieTable ([Title], [Director], [Genre], [Year], [AgeRating], [Duration], [UserRating], [Summary], [Artwork]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\Database.accdb;Persist Security Info=False;";
+            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Database.accdb;Persist Security Info=False;";
 
             // Insert movie data into the database
             using (OleDbConnection conn = new OleDbConnection(connString))

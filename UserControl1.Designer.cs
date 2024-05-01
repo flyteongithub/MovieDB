@@ -37,9 +37,9 @@
             // 
             pictureBoxMovie.BackColor = SystemColors.Control;
             pictureBoxMovie.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxMovie.Location = new Point(3, 3);
+            pictureBoxMovie.Location = new Point(0, 0);
             pictureBoxMovie.Name = "pictureBoxMovie";
-            pictureBoxMovie.Size = new Size(150, 215);
+            pictureBoxMovie.Size = new Size(157, 218);
             pictureBoxMovie.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxMovie.TabIndex = 0;
             pictureBoxMovie.TabStop = false;
@@ -47,7 +47,7 @@
             // labelMovieTitle
             // 
             labelMovieTitle.Anchor = AnchorStyles.Bottom;
-            labelMovieTitle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelMovieTitle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelMovieTitle.Location = new Point(3, 221);
             labelMovieTitle.Name = "labelMovieTitle";
             labelMovieTitle.Size = new Size(150, 40);

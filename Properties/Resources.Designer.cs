@@ -69,5 +69,46 @@ namespace MovieDB.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtMjE4YmF0Y2g0LWthdGllLTAxLmpwZw {
+            get {
+                object obj = ResourceManager.GetObject("cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtMjE4YmF0Y2g0LWthdGllLTAxLmpwZw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f2ac81f39118c14d68c15fbbd253a40f {
+            get {
+                object obj = ResourceManager.GetObject("f2ac81f39118c14d68c15fbbd253a40f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap light_blue_gradient_wallpaper_smooth_blur_with_simple_plain_background_texture_9930252__1_ {
+            get {
+                object obj = ResourceManager.GetObject("light-blue-gradient-wallpaper-smooth-blur-with-simple-plain-background-texture_99" +
+                        "30252 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RED_GRADIENTS_COLOR_SCHEME {
+            get {
+                object obj = ResourceManager.GetObject("RED-GRADIENTS-COLOR-SCHEME", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

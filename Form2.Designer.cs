@@ -264,7 +264,7 @@
             Controls.Add(labelTitle);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
-            Text = "Form2";
+            Text = "Add Movie";
             ResumeLayout(false);
             PerformLayout();
         }
