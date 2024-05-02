@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -37,12 +37,12 @@ namespace MovieDB
             byte[] imageBytes = string.IsNullOrEmpty(selectedImagePath) ? null : File.ReadAllBytes(selectedImagePath);
 
             // SQL statement for inserting new movie
-            string sql = "INSERT INTO MovieTable ([Title], [Director], [Genre], [Year], [AgeRating], [Duration], [UserRating], [Summary], [Artwork]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Database.accdb;Persist Security Info=False;";
+            string sql = "INSERT INTO MovieTable (Title, Director, Genre, Year, AgeRating, Duration, UserRating, Summary, Artwork) VALUES (@Title, @Director, @Genre, @Year, @AgeRating, @Duration, @UserRating, @Summary, @Artwork)";
+            string connString = @"Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\MovieDatabase.db;";
 
             // Insert movie data into the database
-            using (OleDbConnection conn = new OleDbConnection(connString))
-            using (OleDbCommand cmd = new OleDbCommand(sql, conn))
+            using (SQLiteConnection conn = new SQLiteConnection(connString))
+            using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
             {
                 // Add parameters to the SQL command
                 cmd.Parameters.AddWithValue("@Title", title);
