@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using MovieDB.Data;
 
 namespace MovieDB
 {
@@ -19,13 +20,9 @@ namespace MovieDB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Update the connection string with the absolute path to your database
-            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\Database.accdb;Persist Security Info=False;";
-
-            // SQL query to retrieve data
             string sql = "SELECT * FROM MovieTable";
 
-            using (OleDbConnection conn = new OleDbConnection(connString))
+            using (OleDbConnection conn = new OleDbConnection(DatabaseHelper.ConnectionString))
             {
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
 

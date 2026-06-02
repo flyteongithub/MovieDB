@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using MovieDB.Data;
 
 namespace MovieDB
 {
@@ -43,13 +44,9 @@ namespace MovieDB
                 imageBytes = File.ReadAllBytes(selectedImagePath); // Convert the image file to byte array
             }
 
-            // Connection string
-            string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Emile\OneDrive\Proj\MovieDB\MovieDB\Database.accdb;Persist Security Info=False;";
-
-            // SQL command with parameters
             string sql = "INSERT INTO MovieTable ([Title], [Director], [Genre], [Year], [AgeRating], [Duration], [UserRating], [Summary], [Artwork]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            using (OleDbConnection conn = new OleDbConnection(connString))
+            using (OleDbConnection conn = new OleDbConnection(DatabaseHelper.ConnectionString))
             {
                 OleDbCommand cmd = new OleDbCommand(sql, conn);
 
