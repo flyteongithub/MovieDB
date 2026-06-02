@@ -10,6 +10,10 @@
 *.userosscache
 *.sln.docstates
 
+# Access database lock files
+*.laccdb
+*.ldb
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
